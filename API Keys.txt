@@ -1,10 +1,10 @@
 To get the API keys for accessing the Twitter API, you need to create a Twitter Developer account and set up an app. Here's how you can do it:
 
- Step 1: Create a Twitter Developer Account
+ @@@ Step 1: Create a Twitter Developer Account
 1. Go to Twitter Developer Platform: Visit [Twitter Developer](https://developer.twitter.com/) and log in with your Twitter account.
 2. Apply for Developer Access: If you don't have access, you need to apply for a developer account. Follow the instructions to fill out the application form and wait for approval.
    
- Step 2: Create a Twitter App
+ @@@ Step 2: Create a Twitter App
 Once your developer account is approved:
 1. Go to the Developer Dashboard: After logging in, visit the [Developer Dashboard](https://developer.twitter.com/en/apps).
 2. Create a New App: Click on the "Create an app" button. You will need to provide some basic details about the app, such as:
@@ -13,13 +13,13 @@ Once your developer account is approved:
    - Website URL (you can use a placeholder if you don’t have one)
 3. Agree to the Developer Terms: Accept the terms and conditions, and then click "Create."
 
- Step 3: Get the API Keys
+ @@@ Step 3: Get the API Keys
 After creating the app:
 1. Access the Keys and Tokens: On your app’s details page, you will find sections for API Keys, Access Tokens, and more.
    - API Key and API Secret Key: These are used to authenticate the app with Twitter’s servers.
    - Access Token and Access Token Secret: These are required to access the Twitter account's data on behalf of the user.
 
- Step 4: Use the API Keys
+ @@@ Step 4: Use the API Keys
 Copy these four keys and paste them in your Python script where you have:
 ```python
 consumer_key = 'YOUR_CONSUMER_KEY'
@@ -28,6 +28,6 @@ access_token = 'YOUR_ACCESS_TOKEN'
 access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
 ```
 
- Important Notes:
+ *** Important Notes:
 - Keep these API keys 'private'. Do not share them publicly or expose them in any open repositories.
 - Twitter may have rate limits for API calls, so make sure to check the documentation for usage restrictions.
