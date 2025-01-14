@@ -1,69 +1,110 @@
-# Twitter Sentiment Analysis
+# Twitter Sentiment Analysis Tool
 
-This project uses the Twitter API and TextBlob for sentiment analysis on tweets related to a specific topic. It fetches recent tweets based on a keyword or hashtag and analyzes whether the sentiment is positive, negative, or neutral.
+This repository provides a Python script for fetching and analyzing tweets based on a search query. It uses the Twitter API via Tweepy and performs sentiment analysis with TextBlob.
 
-## Prerequisites
+---
 
-Before running the script, you need to have:
-- A **Twitter Developer** account to access the Twitter API and get your API keys.
-- Python installed on your machine.
-- `tweepy` and `textblob` Python libraries.
+## Features
 
-## Setup
+- **Fetch Tweets**: Retrieves tweets based on a specified search query.
+- **Sentiment Analysis**: Classifies tweets as Positive, Negative, or Neutral.
+- **Rate Limit Handling**: Automatically handles Twitter API rate limits.
+- **Secure API Keys**: Uses environment variables to protect API credentials.
+- **Logging**: Provides logs for tracking progress and debugging.
 
-### 1. Install Dependencies
+---
 
-You need to install the required libraries. Run the following command:
+## Requirements
 
-```bash
-pip install tweepy textblob
-```
+- Python 3.7+
+- A valid Twitter Developer account and API credentials
 
-### 2. Get Twitter API Keys
+---
 
-To access Twitter's data, you'll need to generate API keys. Follow these steps:
-1. Create a Twitter Developer account at [Twitter Developer](https://developer.twitter.com/).
-2. Set up an application within your developer account and generate the following keys:
-   - Consumer Key
-   - Consumer Secret Key
-   - Access Token
-   - Access Token Secret
+## Installation
 
-### 3. Update API Keys in the Script
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/twitter-sentiment-analysis.git
+   cd twitter-sentiment-analysis
+   ```
 
-In the Python script (`twitter_sentiment_analysis.py`), replace the following placeholders with your API keys:
+2. **Create a Virtual Environment**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-```python
-consumer_key = 'YOUR_CONSUMER_KEY'
-consumer_secret = 'YOUR_CONSUMER_SECRET'
-access_token = 'YOUR_ACCESS_TOKEN'
-access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
-```
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set Up Environment Variables**:
+   Create a `.env` file in the project root or set the following environment variables:
+   ```env
+   TWITTER_CONSUMER_KEY=your_consumer_key
+   TWITTER_CONSUMER_SECRET=your_consumer_secret
+   TWITTER_ACCESS_TOKEN=your_access_token
+   TWITTER_ACCESS_SECRET=your_access_secret
+   ```
+
+---
 
 ## Usage
 
-1. Run the script by providing a query (keyword or hashtag) for which you want to analyze sentiment:
+1. **Run the Script**:
+   ```bash
+   python sentiment_analysis.py
+   ```
 
+2. **Modify the Search Query**:
+   Update the `query` variable in the script to search for a specific topic or hashtag:
+   ```python
+   query = 'Python'  # Replace 'Python' with your topic
+   ```
+
+3. **View Results**:
+   The script will print each tweet and its sentiment (Positive, Negative, or Neutral):
+   ```
+   Tweet: Python is amazing!
+   Sentiment: Positive
+
+   Tweet: I hate debugging Python code.
+   Sentiment: Negative
+   ```
+
+---
+
+## Project Structure
+
+- `sentiment_analysis.py`: Main script for fetching tweets and performing sentiment analysis.
+- `requirements.txt`: List of Python dependencies.
+
+---
+
+## Dependencies
+
+- [Tweepy](https://www.tweepy.org/): Twitter API wrapper for Python.
+- [TextBlob](https://textblob.readthedocs.io/): Simplified text processing for sentiment analysis.
+
+Install dependencies using:
 ```bash
-python twitter_sentiment_analysis.py
+pip install -r requirements.txt
 ```
 
-2. The script will fetch the latest tweets related to the query and display the tweet along with its sentiment (Positive, Negative, or Neutral).
+---
 
-## Example Output
+## Notes
 
-```plaintext
-Tweet: Python is amazing for data science!
-Sentiment: Positive
+1. **Twitter API Access**:
+   - Ensure your Twitter Developer account is set up to retrieve the required API keys.
+   - Be aware of Twitter API rate limits when fetching tweets.
 
-Tweet: I hate when my code doesn't work.
-Sentiment: Negative
-```
+2. **Sentiment Analysis**:
+   - TextBlob provides basic sentiment analysis. For better accuracy, consider using advanced libraries like VADER or transformers-based models.
 
-## How It Works
 
-1. **Fetch Tweets**: The script uses the Tweepy library to interact with the Twitter API and fetch tweets based on the provided query.
-2. **Sentiment Analysis**: The `TextBlob` library is used to analyze the sentiment of each tweet. TextBlob computes polarity, and based on the polarity value:
-   - Positive if polarity > 0
-   - Negative if polarity < 0
-   - Neutral if polarity == 0
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
