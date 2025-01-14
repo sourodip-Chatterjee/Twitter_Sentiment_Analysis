@@ -103,8 +103,3 @@ pip install -r requirements.txt
 
 2. **Sentiment Analysis**:
    - TextBlob provides basic sentiment analysis. For better accuracy, consider using advanced libraries like VADER or transformers-based models.
-
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
