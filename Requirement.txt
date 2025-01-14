@@ -1,0 +1,13 @@
+Requirements---
+
+tweepy>=4.0.0
+textblob>=0.15.3
+
+
+- [Tweepy](https://www.tweepy.org/): Twitter API wrapper for Python.
+- [TextBlob](https://textblob.readthedocs.io/): Simplified text processing for sentiment analysis.
+
+Install dependencies using:
+
+
+pip install -r requirements.txt
